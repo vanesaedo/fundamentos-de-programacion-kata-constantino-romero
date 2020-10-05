@@ -53,14 +53,9 @@ const imprimeRespuesta = (answer) => {
 const imprimeRespuestas = (question) => {
     return ;
 };
-
+//el carácter \n es un carácter que imprime un salto de línea
 const imprimePregunta = (question) => {
-    return `
-        <form>
-            ${imprimeTitulo(question)}
-            ${imprimeRespuestas(question)}
-        </form>
-    `;
+    return ("<form>\n" + imprimeTitulo(question) + "\n" + imprimeRespuestas(question) + "\n</form>");
 };
 
 document.querySelector('article').innerHTML = imprimePregunta(pregunta);

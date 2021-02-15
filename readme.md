@@ -98,9 +98,9 @@ Rellena las funciones siguientes:
 
 - `imprimeTitulo`: Recibe la **pregunta completa** y devuelve **un string** con el titulo enmarcado en `<p>`
 
-- `imprimeRespuestas`: Recibe la **pregunta completa** y devuelve **un string** con todas las preguntas. Dentro usa todas las funciones siguientes:
+- `imprimeTodasLasRespuestas`: Recibe la **pregunta completa** y devuelve **un string** con todas las posibles respuestas. Dentro usa todas las funciones siguientes:
 
-  - `imprimeRespuesta`: Recibe **una respuesta** de la colección e imprime **un string** compuesto del resultado de las dos siguientes funciones:
+  - `imprimeUnaRespuesta`: Recibe **una respuesta** de la colección e imprime **un string** compuesto del resultado de las dos siguientes funciones:
 
     - `imprimeLabel`: Recibe **una respuesta** e imprime **un string** con la propiedad `label` e `id` enmarcada de una etiqueta `label`.
 

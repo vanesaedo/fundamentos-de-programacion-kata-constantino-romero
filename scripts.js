@@ -5,57 +5,62 @@ const pregunta = {
             label: "Clint Eastwood",
             id: "clint-eastwood",
             name: "actor",
-            value: "clint-eastwood",
+            value: "clint-eastwood"
         },
         {
             label: "James Earl",
             id: "james-earl",
             name: "actor",
-            value: "james-earl",
+            value: "james-earl"
         },
         {
             label: "Roger Moore",
             id: "roger-moore",
             name: "actor",
-            value: "roger-moore",
+            value: "roger-moore"
         },
         {
             label: "William Shatner",
             id: "william-shatner",
             name: "actor",
-            value: "william-shatner",
+            value: "william-shatner"
         },
         {
             label: "Arnold Schwarzenegger",
             id: "arnold-schwarzenegger",
             name: "actor",
-            value: "arnold-schwarzenegger",
+            value: "arnold-schwarzenegger"
         }
     ]
-};
+}
 
-const imprimeTitulo = (question) => {
-    return ;
-};
+function imprimePregunta(pregunta) {
+  const newHTML = "";
 
-const imprimeLabel = (answer) => {
-    return ;
-};
+  newHTML += imprimeTitulo(pregunta);
+  newHTML += imprimeTodasLasRespuestas(pregunta);
 
-const imprimeInput = (answer) => {
-    return ;
-};
+  return newHTML;
+}
 
-const imprimeRespuesta = (answer) => {
-    return ;
-};
+function imprimeTitulo(pregunta) {
+  // Put your code here
+}
 
-const imprimeRespuestas = (question) => {
-    return ;
-};
-//el carácter \n es un carácter que imprime un salto de línea
-const imprimePregunta = (question) => {
-    return ("<form>\n" + imprimeTitulo(question) + "\n" + imprimeRespuestas(question) + "\n</form>");
-};
+function imprimeTodasLasRespuestas(pregunta) {
+  // Put your code here
+}
 
-document.querySelector('article').innerHTML = imprimePregunta(pregunta);
+function imprimeUnaRespuesta(respuesta) {
+  // Put your code here
+}
+
+function imprimeLabel(respuesta) {
+  // Put your code here
+}
+
+function imprimeInput(respuesta) {
+  // Put your code here
+}
+
+document.getElementById("contenedorPreguntas").innerHTML = imprimePregunta(pregunta);

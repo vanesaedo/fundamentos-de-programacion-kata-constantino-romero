@@ -13,16 +13,10 @@ En su voz han sonado míticas frases del cine mundial, como: "No, yo soy tu padr
 ## Requisitos ##
 
 - Fundamentos de programación
-
 - Arrays
-
 - Funciones
-
 - Objetos
-
-- Colecciones
-
-- String literals
+- Strings
 
 ## Iteraciones ##
 
@@ -34,57 +28,57 @@ Tienes el siguiente objeto, que representa una pregunta cualquiera:
 
 ```javascript
 const pregunta = {
-    titulo: '¿A quién ha doblado más veces Constantino Romero?',
-    respuestas: [
-        {
-            label: "Clint Eastwood",
-            id: "clint-eastwood",
-            name: "actor",
-            value: "clint-eastwood",
-        },
-        {
-            label: "James Earl",
-            id: "james-earl",
-            name: "actor",
-            value: "james-earl",
-        },
-        {
-            label: "Roger Moore",
-            id: "roger-moore",
-            name: "actor",
-            value: "roger-moore",
-        },
-        {
-            label: "William Shatner",
-            id: "william-shatner",
-            name: "actor",
-            value: "william-shatner",
-        },
-        {
-            label: "Arnold Schwarzenegger",
-            id: "arnold-schwarzenegger",
-            name: "actor",
-            value: "arnold-schwarzenegger",
-        }
-    ]
+  titulo: '¿A quién ha doblado más veces Constantino Romero?',
+  respuestas: [
+    {
+      label: "Clint Eastwood",
+      id: "clint-eastwood",
+      name: "actor",
+      value: "clint-eastwood"
+    },
+    {
+      label: "James Earl",
+      id: "james-earl",
+      name: "actor",
+      value: "james-earl"
+    },
+    {
+      label: "Roger Moore",
+      id: "roger-moore",
+      name: "actor",
+      value: "roger-moore"
+    },
+    {
+      label: "William Shatner",
+      id: "william-shatner",
+      name: "actor",
+      value: "william-shatner"
+    },
+    {
+      label: "Arnold Schwarzenegger",
+      id: "arnold-schwarzenegger",
+      name: "actor",
+      value: "arnold-schwarzenegger"
+    }
+  ]
 }
 ```
 
 Queremos convertir dicha pregunta en lo siguiente:
 
 ```javascript
-    <form>
+    <form id="contenedorPreguntas">
         <p>¿A quién ha doblado más veces Constantino Romero?</p>
-        <label>Clint Eastwood</label>
-        <input name="actor" type="radio" value="clint-eastwood">
-        <label>James Earl</label>
-        <input name="actor" type="radio" value="james-earl">
-        <label>Roger Moore</label>
-        <input name="actor" type="radio" value="roger-moore">
-        <label>William Shatner</label>
-        <input name="actor" type="radio" value="william-shatner">
-        <label>Arnold Schwarzenegger</label>
-        <input name="actor" type="radio" value="arnold-schwarzenegger">
+        <label for="clint-eastwood">Clint Eastwood</label>
+        <input id="clint-eastwood" name="actor" type="radio" value="clint-eastwood">
+        <label for="james-earl">James Earl</label>
+        <input id="james-earl" name="actor" type="radio" value="james-earl">
+        <label for="roger-moore">Roger Moore</label>
+        <input id="roger-moore" name="actor" type="radio" value="roger-moore">
+        <label for="william-shatner">William Shatner</label>
+        <input id="william-shatner" name="actor" type="radio" value="william-shatner">
+        <label for="arnold-schwarzenegger">Arnold Schwarzenegger</label>
+        <input id="william-shatner" name="actor" type="radio" value="arnold-schwarzenegger">
     </form>
 ```
 
@@ -96,12 +90,12 @@ El proceso sería el siguiente: `pregunta` -> `imprimePregunta(pregunta)` -> `HT
 
 Rellena las funciones siguientes:
 
-- `imprimeTitulo`: Recibe la **pregunta completa** y devuelve **un string** con el titulo enmarcado en `<p>`
+- `imprimeTitulo`: Recibe un **objeto pregunta** y devuelve **un string** con el título de la misma dentro de un `<p>`
 
-- `imprimeTodasLasRespuestas`: Recibe la **pregunta completa** y devuelve **un string** con todas las posibles respuestas. Dentro usa todas las funciones siguientes:
+- `imprimeTodasLasRespuestas`: Recibe un **objeto pregunta** y devuelve **un string** con todas las posibles respuestas. Para ello, esta función llama a las funciones siguientes:
 
-  - `imprimeUnaRespuesta`: Recibe **una respuesta** de la colección e imprime **un string** compuesto del resultado de las dos siguientes funciones:
+  - `imprimeUnaRespuesta`: Recibe un **objeto respuesta** y devuelve **un string** compuesto del resultado de las dos siguientes funciones:
 
-    - `imprimeLabel`: Recibe **una respuesta** e imprime **un string** con la propiedad `label` e `id` enmarcada de una etiqueta `label`.
+    - `imprimeLabel`: Recibe un **objeto respuesta** y devuelve **un string** que representa una etiqueta `<label>` cuyo atributo `for` tendrá el valor de la propiedad `id` del objeto respuesta, y el texto que contiene dicho `<label>` tendrá el valor de la propiedad `label` del objeto respuesta.
 
-    - `imprimeInput`: Recibe **una respuesta** e imprime **un string** con las propiedades `id`, `name` y `value` en una etiqueta `input` del tipo "radio".
+    - `imprimeInput`: Recibe un **objeto respuesta** y devuelve **un string** que representa una etiqueta `<input>` de tipo "radio", cuyos atributos `id`, `name` y `value` tendrán el valor de las propiedades `id`, `name` y `value` del objeto respuesta, respectivamente.
